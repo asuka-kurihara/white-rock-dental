@@ -1,4 +1,4 @@
-import { AboutIndex } from "@/page/about";
+import { AboutIndex } from '@/page/about';
 
 export default function About() {
   return <AboutIndex />;
