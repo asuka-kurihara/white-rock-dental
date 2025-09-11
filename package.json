@@ -9,8 +9,8 @@
     "start": "next start",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
-    "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format": "prettier --write ./src/**/*.{ts,tsx,scss}",
+    "format:check": "prettier --check ./src/**/*.{ts,tsx,scss}"
   },
   "dependencies": {
     "clsx": "^2.1.1",

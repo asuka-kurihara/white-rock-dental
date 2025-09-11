@@ -1,9 +1,0 @@
-node_modules
-.next
-out
-*.min.js
-*.d.ts
-dist
-build
-package-lock.json
-pnpm-lock.yaml
