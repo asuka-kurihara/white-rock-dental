@@ -6,6 +6,9 @@ const nextConfig: NextConfig = {
     unoptimized: true
   },
   trailingSlash: true,
+  experimental: {
+    cssChunking: "strict",
+  },
 };
 
 export default nextConfig;
