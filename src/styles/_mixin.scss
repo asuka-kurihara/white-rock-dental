@@ -1,0 +1,17 @@
+@use 'var' as *;
+
+@mixin pc {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+@mixin horizontal {
+  @media all and (orientation: landscape) {
+    @content;
+  }
+}
+@mixin vertical {
+  @media all and (orientation: portrait) {
+    @content;
+  }
+}
