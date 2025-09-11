@@ -1,4 +1,4 @@
-import { HomeIndex } from "@/components/home";
+import { HomeIndex } from "@/page/home";
 
 export default function Home() {
   return (
