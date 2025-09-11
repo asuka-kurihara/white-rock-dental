@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
+import { Provider } from 'jotai';
+import { ModalHandler } from '@/components/Modal';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+import { notoSansJP, overpass } from '@/utils/font';
 import '@/styles/globals.scss';
 
 export const metadata: Metadata = {
@@ -14,11 +17,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja">
+    <html lang="ja" className={`${notoSansJP.variable} ${overpass.variable}`}>
       <body>
-        <Header />
-        {children}
-        <Footer />
+        <Provider>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+          <ModalHandler />
+        </Provider>
       </body>
     </html>
   );

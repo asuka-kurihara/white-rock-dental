@@ -4,6 +4,6 @@
 
   --mainBg: #eff1f6;
 
-  --fontJp: 'Noto Sans JP', sans-serif;
-  --fontEn: 'Outfit', sans-serif;
+  --fontJp: var(--font-noto-sans-jp), sans-serif;
+  --fontEn: var(--font-overpass), sans-serif;
 }
