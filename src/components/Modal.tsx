@@ -62,9 +62,7 @@ const ModalHandler = () => {
     <>
       <div className={clsx(styles.modal, isOpen && styles['modal--active'])}>
         <div className={clsx(styles.modal__box, options.className)}>
-          <button className={styles.modal__close} onClick={close}>
-            Close
-          </button>
+          <button className={styles.modal__close} onClick={close}></button>
           {node}
         </div>
         <label

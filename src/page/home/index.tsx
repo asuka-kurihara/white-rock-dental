@@ -9,7 +9,7 @@ const HomeIndex = () => {
   const openModal = () => {
     open(
       <div>
-        <h1>Modal</h1>
+        <h2 className={styles.home__modalTitle}>Modal</h2>
       </div>,
       {
         closeOutside: true,
