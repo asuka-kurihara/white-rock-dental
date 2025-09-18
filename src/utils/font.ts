@@ -12,7 +12,6 @@ export const overpass = Overpass({
   variable: '--font-overpass',
 });
 
-
 // 100 Thin
 // 200 ExtraLight
 // 300 Light
