@@ -21,39 +21,58 @@ import iconVisitingDentistry from '@/assets/img/top/icon_visiting_dentistry.svg'
 
 const treatmentLists = [
   {
+    id: 1,
     title: '一般診療',
     icon: iconGeneralMedicalTreatment,
-    content: `一般歯科では虫歯治療や歯周病の治療など、一人一人に合った歯とお口に関する一般的な歯科治療を行います。\nまず基本的なお口の検査を行い、患者さま一人ひとりに合った最善・最良の治療計画を歯科医師が立案します、トリートメントコーディネーターがわかりやすく説明いたしますので、治療計画を一緒に考えていきましょう。\n当院ではインフォームドコンセント(相互理解)を最重視し、患者様に治療計画の内容を十分に ご理解いただいた上で治療をすすめてまいります。`,
+    content: `一般歯科では虫歯治療や歯周病の治療など、一人一人に合った歯とお口に関する一般的な歯科治療を行います。\n\nまず基本的なお口の検査を行い、患者さま一人ひとりに合った最善・最良の治療計画を歯科医師が立案します、トリートメントコーディネーターがわかりやすく説明いたしますので、治療計画を一緒に考えていきましょう。\n\n当院ではインフォームドコンセント(相互理解)を最重視し、患者様に治療計画の内容を十分に ご理解いただいた上で治療をすすめてまいります。`,
   },
   {
+    id: 2,
     title: '訪問歯科',
     icon: iconVisitingDentistry,
-    content: `歯科医院への通院が困難な方に対して、歯科医師や歯科衛生士がご自宅や各種施設へ歯の検診や治療にお伺いいたします。\n持ち運び可能な機材をお持ちして、医院同等の治療をすることができます。`,
+    content: `歯科医院への通院が困難な方に対して、歯科医師や歯科衛生士がご自宅や各種施設へ歯の検診や治療にお伺いいたします。\n\n持ち運び可能な機材をお持ちして、医院同等の治療をすることができます。`,
   },
   {
+    id: 3,
     title: '審美歯科',
     icon: iconAestheticDentistry,
-    content: `審美歯科治療とは、単に見せかけの美しさを求めるものではなく、本来の目的は「歯の機能回復」です。\n総合的な知識と技術を用い、歯科医学をベースにさまざまな方法で審美的な治療を心がけています。\n歯並びや歯の色にコンプレックスを持っている方に自信を持って素敵な笑顔になっていただく治療でもあります。\n歯並びの気になる方、変色などご相談下さい。歯の形や大きさ、色の統一を出し、目的や治療期間、費用に合せて治療法を選択し、美しい口元を手に入れ`,
+    content: `審美歯科治療とは、単に見せかけの美しさを求めるものではなく、本来の目的は「歯の機能回復」です。\n\n総合的な知識と技術を用い、歯科医学をベースにさまざまな方法で審美的な治療を心がけています。\n\n歯並びや歯の色にコンプレックスを持っている方に自信を持って素敵な笑顔になっていただく治療でもあります。\n\n歯並びの気になる方、変色などご相談下さい。`,
   },
   {
+    id: 4,
     title: '予防歯科',
     icon: iconPreventiveDentistry,
     content: `生涯にわたって健康な歯を維持していただくために早期発見・早期治療を心掛けることはもちろん、いかに日々の生活の中でしっかりケアし、定期的に予防することができるかが重要になってきます。`,
   },
   {
+    id: 5,
     title: '小児歯科',
     icon: iconPediatricDentistry,
-    content: `子供のうちに、お口の役割や小児歯科では、来院することは怖いことではなく、楽しいことだと感じてもらうことを大切にしています。\n生えたての歯は、弱くむし歯になりやすい状態です。\n子供の、食生活やきちんとした歯磨きは大人にしか管理できません。\n大人が正しい知識と実行力を持っていれば、まず虫歯にはなりません。\nただ、フッ素がより効果を発揮するのもこの時期の歯です。生えたての歯にフッ素によるケアを行うことで、より効率的なむし歯予防につながります。`,
+    content: `子供のうちに、お口の役割や小児歯科では、来院することは怖いことではなく、楽しいことだと感じてもらうことを大切にしています。\n\n生えたての歯は、弱くむし歯になりやすい状態です。\n\n子供の、食生活やきちんとした歯磨きは大人にしか管理できません。\n\n大人が正しい知識と実行力を持っていれば、まず虫歯にはなりません。\n\nただ、フッ素がより効果を発揮するのもこの時期の歯です。生えたての歯にフッ素によるケアを行うことで、より効率的なむし歯予防につながります。`,
   },
 ];
 
 const HomeIndex = () => {
   const { open } = useModal();
 
-  const openModal = () => {
+  const openModal = ({ id }: { id: number }) => {
+    const modalContent = treatmentLists.find(treatment => treatment.id === id);
+    if (!modalContent) return;
+
     open(
-      <div>
-        <h2 className={styles.home__modalTitle}>Modal</h2>
+      <div className={styles.home__modal}>
+        <div className={styles.home__modalImage}>
+          <div className={styles.home__modalImageIcon}>
+            <ImageUtil
+              srcSp={modalContent.icon.src}
+              widthSp={60}
+              heightSp={60}
+              alt={modalContent.title}
+            />
+          </div>
+          <h2 className={styles.home__modalTitle}>{modalContent.title}</h2>
+        </div>
+        <p className={styles.home__modalContent}>{modalContent.content}</p>
       </div>,
       {
         closeOutside: true,
@@ -124,7 +143,7 @@ const HomeIndex = () => {
           <ul className={styles.home__treatmentList}>
             {treatmentLists.map((treatment, index) => (
               <li key={index}>
-                <button onClick={openModal}>
+                <button onClick={() => openModal({ id: treatment.id })}>
                   <ImageUtil
                     srcSp={treatment.icon.src}
                     widthSp={60}
@@ -201,7 +220,9 @@ const HomeIndex = () => {
           </div>
           <div className={styles.home__contactContent}>
             <h2 className={styles.home__contactTitle}>
-              患者さまの笑顔を<br className="sp_br" />つくる仲間を募集！
+              患者さまの笑顔を
+              <br className="sp_br" />
+              つくる仲間を募集！
             </h2>
             <p className={styles.home__contactText}>
               歯科医師・歯科衛生士・歯科助手・受付スタッフ、幅広く募集中です。

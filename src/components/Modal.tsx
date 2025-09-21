@@ -58,12 +58,24 @@ const ModalHandler = () => {
   const { node, isOpen, ...options } = useAtomValue(modalAtom);
   const { close } = useModal();
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
   return (
     <>
       <div className={clsx(styles.modal, isOpen && styles['modal--active'])}>
         <div className={clsx(styles.modal__box, options.className)}>
           <button className={styles.modal__close} onClick={close}></button>
-          {node}
+          <div className={styles.modal__content}>{node}</div>
         </div>
         <label
           className={clsx(styles.modal__backdrop, options.backdropClassName)}
