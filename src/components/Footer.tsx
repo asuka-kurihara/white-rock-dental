@@ -1,4 +1,5 @@
 import styles from '@/components/Footer.module.scss';
+import { companyInfo } from '@/utils/companyInfo';
 
 import { SvgIcon } from '@/assets/img/SvgIcon';
 
@@ -9,10 +10,10 @@ const Footer = () => {
         <div>
           <SvgIcon name="logo" className={styles.footer__logo} />
           <p className={styles.footer__tel}>
-            TEL：046-295-1330&emsp;受付時間：8:30-17:30
+            TEL：{companyInfo.phone}&emsp;受付時間：8:30-17:30
           </p>
           <address className={styles.footer__address}>
-            神奈川県厚木市妻田東3-16-22
+            {companyInfo.address}
           </address>
         </div>
         <div>
