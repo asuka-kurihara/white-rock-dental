@@ -1,6 +1,7 @@
 import { SvgIcon } from '@/assets/img/SvgIcon';
 import styles from '@/components/Header.module.scss';
 import { companyInfo } from '@/utils/companyInfo';
+import Link from 'next/link';
 
 const Header = () => {
   return (
@@ -19,9 +20,13 @@ const Header = () => {
             </a>
           </div>
           <div className={styles.header__linkItem}>
-            <a href="" className={styles.header__linkInsta}>
+            <Link
+              href={companyInfo.insta}
+              target="_blank"
+              className={styles.header__linkInsta}
+            >
               <SvgIcon name="insta" className={styles.header__insta} />
-            </a>
+            </Link>
           </div>
         </div>
         <div className={styles.header__linkListPc}>
@@ -36,10 +41,14 @@ const Header = () => {
             </a>
           </div>
           <div className={styles.header__linkItemPc}>
-            <a href="" className={styles.header__linkInstaPc}>
+            <Link
+              href={companyInfo.insta}
+              target="_blank"
+              className={styles.header__linkInstaPc}
+            >
               <SvgIcon name="insta" className={styles.header__instaPc} />
               Instagram
-            </a>
+            </Link>
           </div>
         </div>
       </div>

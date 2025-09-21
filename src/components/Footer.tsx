@@ -1,5 +1,6 @@
 import styles from '@/components/Footer.module.scss';
 import { companyInfo } from '@/utils/companyInfo';
+import Link from 'next/link';
 
 import { SvgIcon } from '@/assets/img/SvgIcon';
 
@@ -17,27 +18,39 @@ const Footer = () => {
           </address>
         </div>
         <div>
-          <a href="" className={styles.footer__insta}>
+          <Link
+            href={companyInfo.insta}
+            target="_blank"
+            className={styles.footer__insta}
+          >
             <SvgIcon name="insta" className={styles.footer__instaIcon} />
             Instagram
-          </a>
+          </Link>
         </div>
       </div>
       <div className={styles.footer__inner}>
         <ul className={styles.footer__logoList}>
           <li className={styles.footer__logoItem}>
-            <a href="" className={styles.footer__logoLink}>
+            <Link
+              href={companyInfo.sukoyakaUrl}
+              target="_blank"
+              className={styles.footer__logoLink}
+            >
               <SvgIcon
                 name="logoSukoyaka"
                 className={styles.footer__logoIconSukoyaka}
               />
-            </a>
+            </Link>
           </li>
           <li className={styles.footer__logoItem}>
-            <a href="" className={styles.footer__logoLink}>
+            <Link
+              href={companyInfo.scUrl}
+              target="_blank"
+              className={styles.footer__logoLink}
+            >
               <SvgIcon name="logoSc" className={styles.footer__logoIconSc} />
               (有)エス・シー・プランニング
-            </a>
+            </Link>
           </li>
         </ul>
         <div>

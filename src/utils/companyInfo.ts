@@ -5,6 +5,9 @@ const companyInfo = {
   phone: '000-000-0000',
   // email: 'info@white-rock.com',
   // website: 'https://www.white-rock.com',
+  insta: 'https://example.com',
+  sukoyakaUrl: 'https://yuyusukoyakakai.com/',
+  scUrl: 'https://sc-planning.co.jp/',
 };
 
 export { companyInfo };
