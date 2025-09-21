@@ -11,7 +11,10 @@ const Header = () => {
         </a>
         <div className={styles.header__linkList}>
           <div className={styles.header__linkItem}>
-            <a href={`tel:${companyInfo.phone}`} className={styles.header__linkTel}>
+            <a
+              href={`tel:${companyInfo.phone}`}
+              className={styles.header__linkTel}
+            >
               <SvgIcon name="tel" className={styles.header__tel} />
             </a>
           </div>
@@ -23,10 +26,13 @@ const Header = () => {
         </div>
         <div className={styles.header__linkListPc}>
           <div className={styles.header__linkItemPc}>
-            <a href={`tel:${companyInfo.phone}`} className={styles.header__linkTelPc}>
+            <a
+              href={`tel:${companyInfo.phone}`}
+              className={styles.header__linkTelPc}
+            >
               <SvgIcon name="tel" className={styles.header__telPc} />
               {companyInfo.phone}
-              <span>受付時間  9:00〜18:00</span>
+              <span>受付時間 9:00〜18:00</span>
             </a>
           </div>
           <div className={styles.header__linkItemPc}>

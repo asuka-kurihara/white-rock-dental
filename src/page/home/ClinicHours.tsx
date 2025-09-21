@@ -30,6 +30,7 @@ const clinicScheduleData = [
 ];
 
 const dayNames = ['月', '火', '水', '木', '金', '土', '日/祝'];
+
 const dayKeys = [
   'monday',
   'tuesday',
@@ -39,6 +40,7 @@ const dayKeys = [
   'saturday',
   'sunday',
 ];
+
 const ClinicHours = () => {
   return (
     <table className={styles.home__clinicHoursTable}>
