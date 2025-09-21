@@ -7,17 +7,17 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.header__inner}>
-        <a href="/" className={styles.header__logo}>
+        <Link href="/" className={styles.header__logo}>
           <SvgIcon name="logo" className={styles.header__logo} />
-        </a>
+        </Link>
         <div className={styles.header__linkList}>
           <div className={styles.header__linkItem}>
-            <a
+            <Link
               href={`tel:${companyInfo.phone}`}
               className={styles.header__linkTel}
             >
               <SvgIcon name="tel" className={styles.header__tel} />
-            </a>
+            </Link>
           </div>
           <div className={styles.header__linkItem}>
             <Link
@@ -31,14 +31,14 @@ const Header = () => {
         </div>
         <div className={styles.header__linkListPc}>
           <div className={styles.header__linkItemPc}>
-            <a
+            <Link
               href={`tel:${companyInfo.phone}`}
               className={styles.header__linkTelPc}
             >
               <SvgIcon name="tel" className={styles.header__telPc} />
               {companyInfo.phone}
               <span>受付時間 9:00〜18:00</span>
-            </a>
+            </Link>
           </div>
           <div className={styles.header__linkItemPc}>
             <Link
