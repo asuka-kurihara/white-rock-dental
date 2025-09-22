@@ -11,8 +11,8 @@ import mvPc from '@/assets/img/top/mv_pc.png';
 import mvSp from '@/assets/img/top/mv_sp.png';
 import imageConcept from '@/assets/img/top/concept.png';
 import imageAccess from '@/assets/img/top/access.png';
-import recruitPc from '@/assets/img/top/recruit_pc.png';
-import recruitSp from '@/assets/img/top/recruit_sp.png';
+import bannerRecruitPc from '@/assets/img/top/banner_recruit_pc.png';
+import bannerRecruitSp from '@/assets/img/top/banner_recruit_sp.png';
 import iconAestheticDentistry from '@/assets/img/top/icon_aesthetic_dentistry.svg';
 import iconGeneralMedicalTreatment from '@/assets/img/top/icon_general_medical_treatment.svg';
 import iconPediatricDentistry from '@/assets/img/top/icon_pediatric_dentistry.svg';
@@ -209,29 +209,14 @@ const HomeIndex = () => {
         <div className={styles.home__contactInner}>
           <div className={styles.home__contactImage}>
             <ImageUtil
-              srcSp={recruitSp.src}
+              srcSp={bannerRecruitSp.src}
               widthSp={345}
               heightSp={495}
-              srcPc={recruitPc.src}
+              srcPc={bannerRecruitPc.src}
               widthPc={1360}
               heightPc={390}
               alt="Recruit"
             />
-          </div>
-          <div className={styles.home__contactContent}>
-            <h2 className={styles.home__contactTitle}>
-              患者さまの笑顔を
-              <br className="sp_br" />
-              つくる仲間を募集！
-            </h2>
-            <p className={styles.home__contactText}>
-              歯科医師・歯科衛生士・歯科助手・受付スタッフ、幅広く募集中です。
-              <br />
-              地域に愛される歯科医院で、やりがいと働きやすさを両立しませんか？
-            </p>
-            <p className={styles.home__contactTel}>
-              TEL.<span>{companyInfo.phone}</span>
-            </p>
           </div>
         </div>
       </section>
