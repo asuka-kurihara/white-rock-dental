@@ -5,6 +5,7 @@ import styles from '@/page/home/home.module.scss';
 import { ImageUtil } from '@/utils/ImageUtil';
 import { companyInfo } from '@/utils/companyInfo';
 import { ClinicHours } from '@/page/home/ClinicHours';
+import { Carousel } from '@/utils/Carousel';
 
 // images
 import mvPc from '@/assets/img/top/mv_pc.png';
@@ -52,6 +53,19 @@ const treatmentLists = [
   },
 ];
 
+const carouselItems = [
+  {
+    alt: 'あなたの街の、新しい歯医者。',
+    imagePc: mvPc.src,
+    imageSp: mvSp.src,
+  },
+  {
+    alt: 'あなたの街の、新しい歯医者。',
+    imagePc: mvPc.src,
+    imageSp: mvSp.src,
+  },
+];
+
 const HomeIndex = () => {
   const { open } = useModal();
 
@@ -82,17 +96,16 @@ const HomeIndex = () => {
 
   return (
     <>
-      <h1 className={styles.home__mv}>
-        <ImageUtil
-          srcPc={mvPc.src}
-          srcSp={mvSp.src}
-          alt="あなたの街の、新しい歯医者。"
+      <h1 className="hidden-text">あなたの街の、新しい歯医者。</h1>
+      <div className={styles.home__mv}>
+        <Carousel
+          items={carouselItems}
           widthSp={355}
           heightSp={451}
           widthPc={1360}
           heightPc={590}
         />
-      </h1>
+      </div>
       <div className={styles.home__content}>
         <div className={styles.home__contentText}>
           <p>
