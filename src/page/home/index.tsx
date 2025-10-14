@@ -5,64 +5,49 @@ import styles from '@/page/home/home.module.scss';
 import { ImageUtil } from '@/utils/ImageUtil';
 import { companyInfo } from '@/utils/companyInfo';
 import { ClinicHours } from '@/page/home/ClinicHours';
-import { Carousel } from '@/utils/Carousel';
+import { TopCarousel } from '@/page/home/TopCarousel';
 
 // images
-import mvPc from '@/assets/img/top/mv_pc.png';
-import mvSp from '@/assets/img/top/mv_sp.png';
 import imageConcept from '@/assets/img/top/concept.png';
 import imageAccess from '@/assets/img/top/access.png';
 import bannerRecruitPc from '@/assets/img/top/banner_recruit_pc.png';
 import bannerRecruitSp from '@/assets/img/top/banner_recruit_sp.png';
-import iconAestheticDentistry from '@/assets/img/top/icon_aesthetic_dentistry.svg';
-import iconGeneralMedicalTreatment from '@/assets/img/top/icon_general_medical_treatment.svg';
-import iconPediatricDentistry from '@/assets/img/top/icon_pediatric_dentistry.svg';
-import iconPreventiveDentistry from '@/assets/img/top/icon_preventive_dentistry.svg';
-import iconVisitingDentistry from '@/assets/img/top/icon_visiting_dentistry.svg';
+import iconCavities from '@/assets/img/top/icon_cavities.svg';
+import iconOralRehabilitation from '@/assets/img/top/icon_oral_rehabilitation.svg';
+import iconOraCare from '@/assets/img/top/icon_ora_care.svg';
+import iconDentures from '@/assets/img/top/icon_dentures.svg';
+import iconToothExtraction from '@/assets/img/top/icon_tooth_extraction.svg';
 
 const treatmentLists = [
   {
     id: 1,
-    title: '一般診療',
-    icon: iconGeneralMedicalTreatment,
-    content: `一般歯科では虫歯治療や歯周病の治療など、一人一人に合った歯とお口に関する一般的な歯科治療を行います。\n\nまず基本的なお口の検査を行い、患者さま一人ひとりに合った最善・最良の治療計画を歯科医師が立案します、トリートメントコーディネーターがわかりやすく説明いたしますので、治療計画を一緒に考えていきましょう。\n\n当院ではインフォームドコンセント(相互理解)を最重視し、患者様に治療計画の内容を十分に ご理解いただいた上で治療をすすめてまいります。`,
+    title: '口腔ケア',
+    icon: iconOraCare,
+    content: `口腔ケアとは、口の中を清潔に保ち、健康を維持するためのケアのことを指します。歯や歯茎だけでなく、舌や頬の内側、唇など口腔全体のお手入れを行います。\n\n特に高齢者や寝たきりの方、様々な理由により自分で満足に歯みがきができない方にとって、口腔ケアは非常に重要です。適切なケアを行うことで、感染症のリスクを減らし、食事や会話などの生活の質を保つことができます。`,
   },
   {
     id: 2,
-    title: '訪問歯科',
-    icon: iconVisitingDentistry,
-    content: `歯科医院への通院が困難な方に対して、歯科医師や歯科衛生士がご自宅や各種施設へ歯の検診や治療にお伺いいたします。\n\n持ち運び可能な機材をお持ちして、医院同等の治療をすることができます。`,
+    title: '口腔リハビリ',
+    icon: iconOralRehabilitation,
+    content: `口腔リハビリとは、口の中や口のまわりの筋肉をきたえて、話す・食べる・飲みこむなどの力を回復したり、維持したりするためのリハビリテーションです。\n\n昔より食べにくくなった、後遺症によりうまく話せなくなった、むせやすくなったり・・・そんなときに役立つのが、この口腔リハビリです。当院では一緒に歌をうたったり、ハーモニカを一緒に吹いたり、楽しいリハビリメニューも揃えています。`,
   },
   {
     id: 3,
-    title: '審美歯科',
-    icon: iconAestheticDentistry,
-    content: `審美歯科治療とは、単に見せかけの美しさを求めるものではなく、本来の目的は「歯の機能回復」です。\n\n総合的な知識と技術を用い、歯科医学をベースにさまざまな方法で審美的な治療を心がけています。\n\n歯並びや歯の色にコンプレックスを持っている方に自信を持って素敵な笑顔になっていただく治療でもあります。\n\n歯並びの気になる方、変色などご相談下さい。`,
+    title: 'むし歯・歯周病',
+    icon: iconCavities,
+    content: `当院では訪問専用の持ち運びできる機械をつかい、ベッドサイドや車いすでも、歯を削る・詰めるなどの虫歯治療や、歯ブラシで取り切れない汚れを落とす歯周病の治療などを、受けることが可能です。歯の状態を確認するレントゲンも、ご自宅で撮影できます。痛みが強い場合には、麻酔も使用できますのでご安心ください。`,
   },
   {
     id: 4,
-    title: '予防歯科',
-    icon: iconPreventiveDentistry,
-    content: `生涯にわたって健康な歯を維持していただくために早期発見・早期治療を心掛けることはもちろん、いかに日々の生活の中でしっかりケアし、定期的に予防することができるかが重要になってきます。`,
+    title: '入れ歯の相談',
+    icon: iconDentures,
+    content: `訪問診療で最も多い依頼が入れ歯の修理・作成です。合わない入れ歯を無無理して使っていませんか？通院がむずかしい方でも、ご自宅で無理なく入れ歯の作成・修理・調整などの治療を受けられます。\n\n入れ歯ができるまでの流れ\n1. お口の診察\n歯科医師が現在のお口の状態を確認します。\n2. 型を取る（型取り）\n入れ歯をつくるために、歯ぐきの形に合わせて型を取ります。\n3.かみ合わせの確認\n上下の歯（または歯ぐき）がしっかり合うように調整します。\n4. 試し入れ（試適）\nできあがった入れ歯の仮のものをはめて、痛みや違和感がないかチェックします。\n5. 完成・調整\n問題がなければ、完成した入れ歯をお渡しし、必要に応じて微調整します。`,
   },
   {
     id: 5,
-    title: '小児歯科',
-    icon: iconPediatricDentistry,
-    content: `子供のうちに、お口の役割や小児歯科では、来院することは怖いことではなく、楽しいことだと感じてもらうことを大切にしています。\n\n生えたての歯は、弱くむし歯になりやすい状態です。\n\n子供の、食生活やきちんとした歯磨きは大人にしか管理できません。\n\n大人が正しい知識と実行力を持っていれば、まず虫歯にはなりません。\n\nただ、フッ素がより効果を発揮するのもこの時期の歯です。生えたての歯にフッ素によるケアを行うことで、より効率的なむし歯予防につながります。`,
-  },
-];
-
-const carouselItems = [
-  {
-    alt: 'あなたの街の、新しい歯医者。',
-    imagePc: mvPc.src,
-    imageSp: mvSp.src,
-  },
-  {
-    alt: 'あなたの街の、新しい歯医者。',
-    imagePc: mvPc.src,
-    imageSp: mvSp.src,
+    title: '抜歯',
+    icon: iconToothExtraction,
+    content: `歯がぐらぐらして食べづらい、根っこが膿んでしまった、等どうしても抜歯を選択せざる得ない場合もあります。かかりつけの医師と連携し、 総合的に安全に抜歯ができるように情報共有をいたします。治療中は体調の管理をしながら、無理のない範囲で進めていきます。\n\nただし、ご自宅での処置がむずかしいと判断された場合も、病院歯科や口腔外科へご紹介しますので、ご安心ください。`,
   },
 ];
 
@@ -98,45 +83,28 @@ const HomeIndex = () => {
     <>
       <h1 className="hidden-text">あなたの街の、新しい歯医者。</h1>
       <div className={styles.home__mv}>
-        <Carousel
-          items={carouselItems}
-          widthSp={355}
-          heightSp={451}
-          widthPc={1360}
-          heightPc={590}
-        />
+        <TopCarousel />
       </div>
       <div className={styles.home__content}>
         <div className={styles.home__contentText}>
           <p>
-            2025年11月8日
+            「もっとこうなれたら…」「いつかやってみたいけど…」そんな思い、ありませんか？
+          </p>
+          <p>私たちは、あなたの小さな“希望”を全力で後押しする歯科医院です。</p>
+          <p>
+            健康な身体は、お口から。
             <br />
-            厚木に新しい歯医者が誕生します。
-            <br />
-            当院は、
-            <span className={styles.home__contentText_bold}>訪問診療</span>と
-            <span className={styles.home__contentText_bold}>外来診療</span>
-            を組み合わせた、
-            <br />
-            地域に根差したハイブリッド歯科です。
+            あなたのポテンシャルを引き出し、最良の口腔環境を一緒につくります。
           </p>
           <p>
-            小さなお子さんからご高齢の方まで、
+            計画的で丁寧な診療を通じて、自分らしく生き生きと暮らせる毎日をサポート。
             <br />
-            歯のことでお困りなら、
-            <br className="sp_br" />
-            もう一人で悩まないでください。
+            笑顔で一生を楽しめるコミュニティを目指しています。
           </p>
           <p>
-            「通うのが難しい…」「歯医者がちょっと苦手…」
+            あなたの希望を叶えるお口づくり、
             <br />
-            そんなあなたの声に寄り添い、
-            <br className="sp_br" />
-            患者さんはもちろん、
-            <br />
-            スタッフも笑顔になれる場所を目指しています。
-            <br />
-            あなたの笑顔が、私たちの力になります。
+            私たちと一緒にはじめてみませんか？
           </p>
         </div>
         <div className={styles.home__contentImage}>
@@ -204,23 +172,26 @@ const HomeIndex = () => {
       </section>
       <section className={styles.home__clinicHours}>
         <div className={styles.home__clinicHoursInner}>
-          <ClinicHours />
+          <div className={styles.home__clinicHoursContent}>
+            <ClinicHours />
+            <p className={styles.home__clinicHoursText}>※現在訪問しかのみ受付中。外来は準備中。</p>
+          </div>
           <div className={styles.home__clinicHoursContact}>
             <p className={styles.home__clinicHoursContactTitle}>
-              ご予約はこちら
+              訪問歯科のご予約はこちら
             </p>
             <p className={styles.home__clinicHoursContactTel}>
               TEL.<span>{companyInfo.phone}</span>
             </p>
             <p className={styles.home__clinicHoursContactTime}>
-              受付時間 9:00〜18:00
+              受付時間 9:00〜17:30
             </p>
           </div>
         </div>
       </section>
-      <section className={styles.home__contact}>
-        <div className={styles.home__contactInner}>
-          <div className={styles.home__contactImage}>
+      <section className={styles.home__recruit}>
+        <div className={styles.home__recruitInner}>
+          <div className={styles.home__recruitImage}>
             <ImageUtil
               srcSp={bannerRecruitSp.src}
               widthSp={345}
@@ -231,6 +202,42 @@ const HomeIndex = () => {
               alt="Recruit"
             />
           </div>
+          <section>
+            <h2 className={styles.home__recruitTitle}>ホワイトロック歯科の強み</h2>
+            <ul className={styles.home__recruitList}>
+              <li className={styles.home__recruitItem}>
+                <div className={styles.home__recruitItemContent}>
+                  <p className={styles.home__recruitItemNumber}>01</p>
+                  <p className={styles.home__recruitItemTitle}>地域医療に貢献できる<br />実感が持てる環境です！</p>
+                </div>
+                <p className={styles.home__recruitItemText}>在宅での訪問診療から総合病院での口腔ケア、施設での口腔ケア指導など幅広く活躍できます。</p>
+              </li>
+              <li className={styles.home__recruitItem}>
+                <div className={styles.home__recruitItemContent}>
+                  <p className={styles.home__recruitItemNumber}>02</p>
+                  <p className={styles.home__recruitItemTitle}>柔軟な勤務スタイルに<br />対応</p>
+                </div>
+                <p className={styles.home__recruitItemText}>子育てや介護など、ライフスタイルの変化にも柔軟に対応。安心して長く働き続ける環境を作っています。</p>
+              </li>
+              <li className={styles.home__recruitItem}>
+                <div className={styles.home__recruitItemContent}>
+                  <p className={styles.home__recruitItemNumber}>03</p>
+                  <p className={styles.home__recruitItemTitle}>予約制で担当医制！</p>
+                </div>
+                <p className={styles.home__recruitItemText}>無理のないスケジュールで訪問未経験でも安心</p>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2 className={styles.home__recruitTitle}>募集職</h2>
+            <p className={styles.home__recruitContentText}>歯科医師・歯科衛生士 土日祝休み 9:30-18:30 週１～</p>
+            <p className={styles.home__recruitContentSecondText}>まずはお気軽にお問い合わせください</p>
+            <p className={styles.home__recruitContentTel}>
+              <span className={styles.home__recruitContentTelTitle}>TEL.</span>
+              {companyInfo.phone}
+              <span className={styles.home__recruitContentTelTime}>受付時間  9:00〜17:30</span>
+            </p>
+          </section>
         </div>
       </section>
     </>

@@ -239,12 +239,6 @@
   }
   &__clinicHoursTable {
     width: 100%;
-    margin-bottom: 3rem;
-    @include pc {
-      width: auto;
-      margin-bottom: 0;
-      width: calc(728 / 1230 * 100%);
-    }
     tr {
       text-align: left;
     }
@@ -307,6 +301,19 @@
       }
     }
   }
+  &__clinicHoursContent {
+    width: 100%;
+    margin-bottom: 3rem;
+    @include pc {
+      width: auto;
+      width: calc(728 / 1230 * 100%);
+      margin-bottom: 0;
+    }
+  }
+  &__clinicHoursText {
+    font-size: 1.4rem;
+    margin-top: 1.6rem;
+  }
   &__clinicHoursContact {
     background-color: var(--white);
     padding: 2rem 0;
@@ -348,68 +355,114 @@
     }
   }
   // --------------------------------------------------
-  &__contact {
+  &__recruit {
     padding-top: 5.6rem;
     @include pc {
       padding-top: 11rem;
     }
   }
-  &__contactInner {
+  &__recruitInner {
     position: relative;
     padding: 0 1.5rem;
     @include pc {
       padding: 0;
       width: 90%;
-      max-width: 136rem;
+      max-width: 120rem;
       margin: 0 auto;
     }
   }
-  &__contactContent {
-    position: absolute;
-    width: calc(100% - 3rem);
-    bottom: 2.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 0 2.5rem;
+  &__recruitImage {
+    margin-bottom: 6rem;
+  }
+  &__recruitTitle {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
     @include pc {
-      width: calc(690 / 1360 * 100%);
-      bottom: auto;
-      top: 50%;
-      left: 8rem;
-      transform: translate(0, -50%);
-      padding: 0;
+      font-size: 2.8rem;
+      margin-bottom: 2.6rem;
     }
   }
-  &__contactTitle {
+  &__recruitList {
+    margin-bottom: 5.6rem;
+    @include pc {
+      display: flex;
+      gap: 2rem;
+    }
+  }
+  &__recruitItem {
+    background: var(--gray);
+    padding: 3rem 2rem;
+    border-radius: 2rem;
+    @include pc {
+      padding: 3rem;
+      flex: 1;
+    }
+    & + & {
+      margin-top: 2rem;
+      @include pc {
+        margin-top: 0;
+      }
+    }
+  }
+  &__recruitItemContent {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  &__recruitItemNumber {
     font-size: 2.8rem;
+    font-weight: 500;
+    font-family: var(--fontEn);
+    color: var(--red);
+    margin-right: 1.6rem;
+    padding-right: 1.6rem;
+    border-right: 0.1rem solid #cccccc;
+    @include pc {
+      font-size: 3.2rem;
+      margin-right: 2rem;
+      padding-right: 2rem;
+    }
+  }
+  &__recruitItemTitle {
+    font-size: 2.2rem;
     font-weight: 700;
+    letter-spacing: 0.04rem;
+    line-height: 1.4;
+    word-break: keep-all;
+  }
+  &__recruitItemText {
+    font-size: 1.6rem;
+    line-height: 1.6;
+    letter-spacing: 0.04rem;
+  }
+  &__recruitContentText {
+    font-size: 1.6rem;
     line-height: 1.4;
     letter-spacing: 0.04rem;
-    margin-bottom: 0.9rem;
-    @include pc {
-      font-size: 4rem;
-      margin-bottom: 3.6rem;
-    }
+    margin-bottom: 5.6rem;
   }
-  &__contactText {
-    font-size: 1.4rem;
-    line-height: 1.8;
-    letter-spacing: 0.06rem;
-    margin-bottom: 1.9rem;
-    @include pc {
-      font-size: 1.8rem;
-      margin-bottom: 3.3rem;
-    }
+  &__recruitContentSecondText {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 0.02rem;
+    margin-bottom: 2.4rem;
   }
-  &__contactTel {
-    font-size: 2rem;
-    font-family: var(--fontEn);
+  &__recruitContentTel {
+    font-size: 3.6rem;
     font-weight: 500;
-    span {
-      font-size: 2.6rem;
-      @include pc {
-        font-size: 3.6rem;
-      }
+  }
+  &__recruitContentTelTitle {
+    font-size: 2rem;
+  }
+  &__recruitContentTelTime {
+    display: block;
+    margin-top: 1.4rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    @include pc {
+      display: inline;
+      padding-left: 1.4rem;
     }
   }
 }

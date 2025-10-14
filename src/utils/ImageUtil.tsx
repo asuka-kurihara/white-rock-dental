@@ -1,4 +1,6 @@
-const ImageUtil = ({
+import { memo } from 'react';
+
+const ImageUtil = memo(({
   srcPc,
   srcSp,
   alt,
@@ -36,6 +38,8 @@ const ImageUtil = ({
       />
     </picture>
   );
-};
+});
+
+ImageUtil.displayName = 'ImageUtil';
 
 export { ImageUtil };

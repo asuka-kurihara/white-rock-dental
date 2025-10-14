@@ -1,18 +1,18 @@
 @use '@/styles/mixin' as *;
 
 .footer {
+  width: 90%;
   max-width: 132rem;
-  margin: 0 auto;
+  margin: 5.6rem auto 0;
   padding: 5rem 0 3rem;
+  border-top: 0.1rem solid var(--gray);
   @include pc {
     padding: 8rem 0 4rem;
     margin-top: 11rem;
-    border-top: 0.1rem solid var(--gray);
+    width: 100%;
   }
   &__inner {
-    padding: 0 2rem;
     @include pc {
-      padding: 0;
       display: flex;
       justify-content: space-between;
     }

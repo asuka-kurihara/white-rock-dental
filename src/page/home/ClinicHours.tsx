@@ -2,25 +2,23 @@ import styles from '@/page/home/home.module.scss';
 
 const clinicScheduleData = [
   {
-    timeSlot: '9:00～<br class="sp_br" />12:30',
-    lastReception: '最終受付12:00',
+    timeSlot: '10:00～<br class="sp_br" />12:30',
     days: {
       monday: true,
       tuesday: true,
-      wednesday: false,
+      wednesday: true,
       thursday: true,
       friday: true,
-      saturday: true,
-      sunday: true,
+      saturday: false,
+      sunday: false,
     },
   },
   {
-    timeSlot: '15:00～<br class="sp_br" />18:30',
-    lastReception: '最終受付18:00',
+    timeSlot: '14:30～<br class="sp_br" />17:30',
     days: {
       monday: true,
       tuesday: true,
-      wednesday: false,
+      wednesday: true,
       thursday: true,
       friday: true,
       saturday: false,
@@ -58,11 +56,10 @@ const ClinicHours = () => {
         {clinicScheduleData.map((schedule, index) => (
           <tr key={index} className={styles.home__clinicHoursBody}>
             <td>
-              <span className={styles.home__clinicHoursBodyTimeSlot} dangerouslySetInnerHTML={{ __html: schedule.timeSlot }} />
-              <br />
-              <span className={styles.home__clinicHoursBodySmall}>
-                {schedule.lastReception}
-              </span>
+              <span
+                className={styles.home__clinicHoursBodyTimeSlot}
+                dangerouslySetInnerHTML={{ __html: schedule.timeSlot }}
+              />
             </td>
             {dayKeys.map((dayKey, dayIndex) => {
               const isOpen =
