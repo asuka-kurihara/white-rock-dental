@@ -5,7 +5,8 @@ const companyInfo = {
   phone: '046-221-6480',
   // email: 'info@white-rock.com',
   // website: 'https://www.white-rock.com',
-  insta: 'https://www.instagram.com/white_rock_dental_clinic?igsh=OThmcTV1enVhMWxv&utm_source=qr',
+  insta:
+    'https://www.instagram.com/white_rock_dental_clinic?igsh=OThmcTV1enVhMWxv&utm_source=qr',
   sukoyakaUrl: 'https://yuyusukoyakakai.com/',
   scUrl: 'https://sc-planning.co.jp/',
 };
