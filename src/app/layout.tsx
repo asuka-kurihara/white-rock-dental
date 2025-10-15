@@ -10,20 +10,21 @@ export const metadata: Metadata = {
   // 1. 基本的なメタ情報（最重要）
   metadataBase: new URL('https://white-rock-dental.com'),
   title: 'ホワイトロック歯科 | 外来・訪問歯科',
-  description: '神奈川県厚木市で外来・訪問歯科を行っています。地域の皆様のお口の健康をサポートします。',
-  
+  description:
+    '神奈川県厚木市で外来・訪問歯科を行っています。地域の皆様のお口の健康をサポートします。',
+
   // 2. ビューポート設定（レスポンシブ対応）
   viewport: {
     width: 'device-width',
     initialScale: 1,
     maximumScale: 5,
   },
-  
+
   // 3. 正規URL
   alternates: {
     canonical: '/',
   },
-  
+
   // 4. 検索エンジン制御
   robots: {
     index: true,
@@ -36,24 +37,32 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  
+
   // 5. キーワードと作者情報
-  keywords: ['訪問歯科', '歯科診療', '厚木市', '神奈川県', 'white-rock', 'ホワイトロック'],
+  keywords: [
+    '訪問歯科',
+    '歯科診療',
+    '厚木市',
+    '神奈川県',
+    'white-rock',
+    'ホワイトロック',
+  ],
   authors: [{ name: 'ホワイトロック歯科' }],
   creator: 'ホワイトロック歯科',
   publisher: 'ホワイトロック歯科',
-  
+
   // 6. フォーマット検出制御
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-  
+
   // 7. Open Graph（Facebook、LINE等）
   openGraph: {
     title: 'ホワイトロック歯科 | 外来・訪問歯科',
-    description: '神奈川県厚木市で外来・訪問歯科を行っています。地域の皆様のお口の健康をサポートします。',
+    description:
+      '神奈川県厚木市で外来・訪問歯科を行っています。地域の皆様のお口の健康をサポートします。',
     url: 'https://white-rock-dental.com',
     siteName: 'ホワイトロック歯科',
     images: [
@@ -67,12 +76,13 @@ export const metadata: Metadata = {
     locale: 'ja_JP',
     type: 'website',
   },
-  
+
   // 8. Twitter Card
   twitter: {
     card: 'summary_large_image',
     title: 'ホワイトロック歯科 | 外来・訪問歯科',
-    description: '神奈川県厚木市で外来・訪問歯科を行っています。地域の皆様のお口の健康をサポートします。',
+    description:
+      '神奈川県厚木市で外来・訪問歯科を行っています。地域の皆様のお口の健康をサポートします。',
     images: ['/ogp.jpg'],
   },
 };
