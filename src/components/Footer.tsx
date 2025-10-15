@@ -11,7 +11,7 @@ const Footer = () => {
         <div>
           <SvgIcon name="logo" className={styles.footer__logo} />
           <p className={styles.footer__tel}>
-            TEL：{companyInfo.phone}&emsp;受付時間：8:30-17:30
+            TEL：<a href={`tel:${companyInfo.phone}`}>{companyInfo.phone}</a>&emsp;受付時間：8:30-17:30
           </p>
           <address className={styles.footer__address}>
             {companyInfo.address}

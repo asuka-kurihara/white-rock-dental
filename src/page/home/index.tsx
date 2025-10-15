@@ -41,7 +41,7 @@ const treatmentLists = [
     id: 4,
     title: '入れ歯の相談',
     icon: iconDentures,
-    content: `訪問診療で最も多い依頼が入れ歯の修理・作成です。合わない入れ歯を無無理して使っていませんか？通院がむずかしい方でも、ご自宅で無理なく入れ歯の作成・修理・調整などの治療を受けられます。\n\n入れ歯ができるまでの流れ\n1. お口の診察\n歯科医師が現在のお口の状態を確認します。\n2. 型を取る（型取り）\n入れ歯をつくるために、歯ぐきの形に合わせて型を取ります。\n3.かみ合わせの確認\n上下の歯（または歯ぐき）がしっかり合うように調整します。\n4. 試し入れ（試適）\nできあがった入れ歯の仮のものをはめて、痛みや違和感がないかチェックします。\n5. 完成・調整\n問題がなければ、完成した入れ歯をお渡しし、必要に応じて微調整します。`,
+    content: `訪問診療で最も多い依頼が入れ歯の修理・作成です。合わない入れ歯を無無理して使っていませんか？通院がむずかしい方でも、ご自宅で無理なく入れ歯の作成・修理・調整などの治療を受けられます。\n\n【入れ歯ができるまでの流れ】\n\n1. お口の診察\n歯科医師が現在のお口の状態を確認します。\n\n2. 型を取る（型取り）\n入れ歯をつくるために、歯ぐきの形に合わせて型を取ります。\n\n3. かみ合わせの確認\n上下の歯（または歯ぐき）がしっかり合うように調整します。\n\n4. 試し入れ（試適）\nできあがった入れ歯の仮のものをはめて、痛みや違和感がないかチェックします。\n\n5. 完成・調整\n問題がなければ、完成した入れ歯をお渡しし、必要に応じて微調整します。`,
   },
   {
     id: 5,
@@ -181,7 +181,7 @@ const HomeIndex = () => {
               訪問歯科のご予約はこちら
             </p>
             <p className={styles.home__clinicHoursContactTel}>
-              TEL.<span>{companyInfo.phone}</span>
+              TEL.<a href={`tel:${companyInfo.phone}`}><span>{companyInfo.phone}</span></a>
             </p>
             <p className={styles.home__clinicHoursContactTime}>
               受付時間 9:00〜17:30
@@ -234,7 +234,7 @@ const HomeIndex = () => {
             <p className={styles.home__recruitContentSecondText}>まずはお気軽にお問い合わせください</p>
             <p className={styles.home__recruitContentTel}>
               <span className={styles.home__recruitContentTelTitle}>TEL.</span>
-              {companyInfo.phone}
+              <a href={`tel:${companyInfo.phone}`}>{companyInfo.phone}</a>
               <span className={styles.home__recruitContentTelTime}>受付時間  9:00〜17:30</span>
             </p>
           </section>

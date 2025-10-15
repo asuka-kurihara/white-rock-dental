@@ -1,5 +1,5 @@
 const companyInfo = {
-  name: '株式会社white-rock',
+  name: 'ホワイトロック歯科',
   postalCode: '243-0813',
   address: '神奈川県厚木市妻田東3-16-22',
   phone: '046-221-6480',
