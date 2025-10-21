@@ -174,7 +174,7 @@ const HomeIndex = () => {
         <div className={styles.home__clinicHoursInner}>
           <div className={styles.home__clinicHoursContent}>
             <ClinicHours />
-            <p className={styles.home__clinicHoursText}>※現在訪問しかのみ受付中。外来は準備中。</p>
+            <p className={styles.home__clinicHoursText}>※現在訪問歯科のみ受付中。外来は準備中。</p>
           </div>
           <div className={styles.home__clinicHoursContact}>
             <p className={styles.home__clinicHoursContactTitle}>
