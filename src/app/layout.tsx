@@ -8,7 +8,7 @@ import '@/styles/globals.scss';
 
 export const metadata: Metadata = {
   // 1. 基本的なメタ情報（最重要）
-  metadataBase: new URL('https://white-rock-dental.com'),
+  metadataBase: new URL('https://whiterock-dental.com'),
   title: 'ホワイトロック歯科 | 外来・訪問歯科',
   description:
     '神奈川県厚木市で外来・訪問歯科を行っています。地域の皆様のお口の健康をサポートします。',
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     title: 'ホワイトロック歯科 | 外来・訪問歯科',
     description:
       '神奈川県厚木市で外来・訪問歯科を行っています。地域の皆様のお口の健康をサポートします。',
-    url: 'https://white-rock-dental.com',
+    url: 'https://whiterock-dental.com',
     siteName: 'ホワイトロック歯科',
     images: [
       {
