@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     siteName: 'ホワイトロック歯科',
     images: [
       {
-        url: '/ogp.jpg',
+        url: 'https://whiterock-dental.com/ogp.jpg',
         width: 1200,
         height: 630,
         alt: 'ホワイトロック歯科',
@@ -83,7 +83,7 @@ export const metadata: Metadata = {
     title: 'ホワイトロック歯科 | 外来・訪問歯科',
     description:
       '神奈川県厚木市で外来・訪問歯科を行っています。地域の皆様のお口の健康をサポートします。',
-    images: ['/ogp.jpg'],
+    images: ['https://whiterock-dental.com/ogp.jpg'],
   },
 };
 
