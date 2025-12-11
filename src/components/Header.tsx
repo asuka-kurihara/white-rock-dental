@@ -37,7 +37,7 @@ const Header = () => {
             >
               <SvgIcon name="tel" className={styles.header__telPc} />
               {companyInfo.phone}
-              <span>受付時間 9:00〜17:30</span>
+              <span>受付時間 9:30〜18:00</span>
             </Link>
           </div>
           <div className={styles.header__linkItemPc}>

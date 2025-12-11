@@ -249,6 +249,7 @@
     td {
       padding: 1rem 0;
       border-bottom: 0.1rem solid var(--white);
+      line-height: 0.6;
       @include pc {
         padding: 2.1rem 0;
       }

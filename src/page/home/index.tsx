@@ -174,17 +174,16 @@ const HomeIndex = () => {
         <div className={styles.home__clinicHoursInner}>
           <div className={styles.home__clinicHoursContent}>
             <ClinicHours />
-            <p className={styles.home__clinicHoursText}>※現在訪問歯科のみ受付中。外来は準備中。</p>
           </div>
           <div className={styles.home__clinicHoursContact}>
             <p className={styles.home__clinicHoursContactTitle}>
-              訪問歯科のご予約はこちら
+              ご予約はこちら
             </p>
             <p className={styles.home__clinicHoursContactTel}>
               TEL.<a href={`tel:${companyInfo.phone}`}><span>{companyInfo.phone}</span></a>
             </p>
             <p className={styles.home__clinicHoursContactTime}>
-              受付時間 9:00〜17:30
+              受付時間 9:30〜18:00
             </p>
           </div>
         </div>
@@ -235,7 +234,7 @@ const HomeIndex = () => {
             <p className={styles.home__recruitContentTel}>
               <span className={styles.home__recruitContentTelTitle}>TEL.</span>
               <a href={`tel:${companyInfo.phone}`}>{companyInfo.phone}</a>
-              <span className={styles.home__recruitContentTelTime}>受付時間  9:00〜17:30</span>
+              <span className={styles.home__recruitContentTelTime}>受付時間  9:30〜18:00</span>
             </p>
           </section>
         </div>

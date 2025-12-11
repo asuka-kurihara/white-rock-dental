@@ -2,7 +2,7 @@ import styles from '@/page/home/home.module.scss';
 
 const clinicScheduleData = [
   {
-    timeSlot: '10:00～<br class="sp_br" />12:30',
+    timeSlot: '10:00～<br class="sp_br" />12:00',
     days: {
       monday: true,
       tuesday: true,
@@ -14,7 +14,7 @@ const clinicScheduleData = [
     },
   },
   {
-    timeSlot: '14:30～<br class="sp_br" />17:30',
+    timeSlot: '13:00～<br class="sp_br" />17:30',
     days: {
       monday: true,
       tuesday: true,
@@ -69,7 +69,18 @@ const ClinicHours = () => {
                   key={dayIndex}
                   className={`${styles.home__clinicHoursRow} ${isOpen ? `${styles.home__clinicHoursRow_red}` : ''}`}
                 >
-                  {isOpen ? '⚫︎' : '休'}
+                  {isOpen ? (
+                    dayIndex === 3 ? ( // 木曜日
+                      <>
+                        <span style={{ lineHeight: '0.8', height: '16px', display: 'inline-block' }}>⚫︎</span><br />
+                        <span style={{ fontSize: '0.5em', lineHeight: '0.5' }}>外来</span>
+                      </>
+                    ) : (
+                      '⚫︎'
+                    )
+                  ) : (
+                    '休'
+                  )}
                 </td>
               );
             })}
