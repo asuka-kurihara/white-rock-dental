@@ -12,7 +12,7 @@ const Footer = () => {
           <SvgIcon name="logo" className={styles.footer__logo} />
           <p className={styles.footer__tel}>
             TEL：<a href={`tel:${companyInfo.phone}`}>{companyInfo.phone}</a>
-            &emsp;受付時間：8:30-17:30
+            &emsp;受付時間：9:30〜18:00
           </p>
           <address className={styles.footer__address}>
             {companyInfo.address}
