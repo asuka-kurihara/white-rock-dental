@@ -11,22 +11,22 @@ import mvSp04 from '@/assets/img/top/mv_sp04.png';
 
 const carouselItems = [
   {
-    alt: 'あなたの街の、新しい歯医者。',
+    alt: '”悠々すこやか”に、自分らしく生きる。',
     imagePc: mvPc01.src,
     imageSp: mvSp01.src,
   },
   {
-    alt: '生涯を全うする、よろこびを共に。',
+    alt: 'あなたの”希望”を、私たちが支えます。',
     imagePc: mvPc02.src,
     imageSp: mvSp02.src,
   },
   {
-    alt: '一人一人に合った、計画的な治療を。',
+    alt: '悩みや思いを聞いて、計画的に治療します。',
     imagePc: mvPc03.src,
     imageSp: mvSp03.src,
   },
   {
-    alt: '地域への、恩返し。',
+    alt: '一生を笑顔で楽しめる、コミュニティをつくる。',
     imagePc: mvPc04.src,
     imageSp: mvSp04.src,
   },
