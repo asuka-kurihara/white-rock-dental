@@ -6,6 +6,7 @@ import { ImageUtil } from '@/utils/ImageUtil';
 import { companyInfo } from '@/utils/companyInfo';
 import { ClinicHours } from '@/page/home/ClinicHours';
 import { TopCarousel } from '@/page/home/TopCarousel';
+import Link from 'next/link';
 
 // images
 import imageConcept from '@/assets/img/top/concept.png';
@@ -189,7 +190,19 @@ const HomeIndex = () => {
               alt="Recruit"
             />
           </div>
-          <section>
+         <section>
+            <h2 className={styles.home__recruitTitle}>募集職</h2>
+            <div className={styles.home__recruitLinks}>
+              <Link href="/recruit/hygienist" className={styles.home__recruitLinkBtn}>
+                歯科衛生士
+              </Link>
+              <Link href="/recruit/dentist" className={styles.home__recruitLinkBtn}>
+                歯科医師
+              </Link>
+            </div>
+          </section>
+
+          {/* <section>
             <h2 className={styles.home__recruitTitle}>ホワイトロック歯科の強み</h2>
             <ul className={styles.home__recruitList}>
               <li className={styles.home__recruitItem}>
@@ -224,7 +237,7 @@ const HomeIndex = () => {
               <a href={`tel:${companyInfo.phone}`}>{companyInfo.phone}</a>
               <span className={styles.home__recruitContentTelTime}>受付時間  9:30〜18:00</span>
             </p>
-          </section>
+          </section> */}
         </div>
       </section>
     </>

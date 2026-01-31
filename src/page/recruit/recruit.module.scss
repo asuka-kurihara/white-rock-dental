@@ -1,19 +1,16 @@
 @use '@/styles/mixin' as *;
 
 .recruit {
-  // 全体のデフォルトの行間を150%以上に設定
   line-height: 1.6;
 
   &__mv {
-    /* タイトル背景（MVエリア全体）の左右余白を1.5remに設定 */
     padding: 0 1.5rem; 
-    /* 下のコンテンツ（メッセージエリア）との余白を32pxに設定 */
     margin-bottom: 3.2rem; 
 
     @include pc {
       padding: 0 4rem;
       max-width: 144rem;
-      margin: 0 auto 11rem; // PCは既存のゆったりした余白を維持
+      margin: 0 auto 11rem;
     }
 
     &Inner {
@@ -21,7 +18,6 @@
       border-radius: 2rem;
       overflow: hidden;
       height: 200px;
-      
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -38,10 +34,7 @@
       left: 50%;
       transform: translate(-50%, -50%);
       background: var(--white);
-      
-      /* 白帯の中のpadding：上下0.8rem、左右1.6rem(16px)に設定 */
       padding: 0.8rem 1.6rem; 
-      
       font-size: 1.8rem;
       font-weight: 700;
       white-space: nowrap;
@@ -49,7 +42,7 @@
       
       @include pc { 
         font-size: 3.8rem;
-        padding: 1.2rem 3.2rem; // PCでは少し大きめに調整
+        padding: 1.2rem 3.2rem;
       }
     }
   }
@@ -58,21 +51,63 @@
     padding: 0 1.5rem;
     max-width: 120rem;
     margin: 0 auto;
+    @include pc { padding: 0 4rem; }
   }
 
   &__message {
     margin-top: 0;
     margin-bottom: 5.6rem;
     @include pc { margin-bottom: 11rem; }
+
     &Body {
-      // ★主張を抑える調整（細め・SPで少し小さめ）
       font-size: 1.6rem; 
       font-weight: 500; 
       line-height: 1.8;
-      text-align: center;
+      text-align: left;
       white-space: pre-wrap;
       color: #333;
       @include pc { font-size: 2rem; }
+    }
+  }
+
+  &__gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 3rem;
+
+    @include pc {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 5rem;
+    }
+
+    &Item {
+      width: 100%;
+      max-width: 40rem;
+      height: auto;
+      
+      @include pc {
+        width: auto;
+        max-width: none;
+        height: 30rem;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 1.2rem;
+        object-fit: contain;
+        display: block;
+        
+        @include pc {
+          width: auto;
+          height: 100%;
+        }
+      }
     }
   }
 
@@ -83,6 +118,7 @@
     margin-bottom: 3.4rem;
     line-height: 1.2;
     letter-spacing: 0.05em;
+
     @include pc {
       font-size: 3.2rem;
       margin-bottom: 5rem;
@@ -99,7 +135,6 @@
     }
   }
 
-  /* 募集要項テーブル */
   &__tableSection {
     margin-bottom: 8rem;
     @include pc { margin-bottom: 11rem; }
@@ -112,6 +147,7 @@
     border: 1px solid #C0B3A2;
     border-radius: 0.8rem;
     overflow: hidden;
+
     th, td {
       padding: 1.5rem;
       font-size: 1.4rem;
@@ -120,20 +156,22 @@
       line-height: 1.6;
       @include pc { padding: 2.2rem; font-size: 1.6rem; }
     }
+
     th {
       background: #F0EFE8;
       width: 30%;
       font-weight: 700;
     }
+
     td { 
       background: #fff; 
       border-right: none; 
       white-space: pre-wrap;
     }
+
     tr:last-child th, tr:last-child td { border-bottom: none; }
   }
 
-  /* 強みセクション */
   &__strengths {
     margin-bottom: 8rem;
     @include pc { margin-bottom: 11rem; }
@@ -143,20 +181,30 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
+
     @include pc {
       flex-direction: row;
+      flex-wrap: wrap;
       justify-content: center;
       gap: 2.4rem;
     }
   }
 
   &__strengthItem {
-    flex: 1;
     background: #F0EFE8;
     padding: 4rem 2rem;
     border-radius: 2rem;
     text-align: center;
-    @include pc { padding: 5.6rem 3rem; }
+    
+    @include pc { 
+      padding: 5.6rem 3rem;
+      flex: 1;
+      min-width: 30rem;
+    }
+
+    @media (max-width: 768px) {
+      padding: 4rem 2rem;
+    }
   }
 
   &__strengthNumber {
@@ -190,7 +238,6 @@
     @include pc { font-size: 1.6rem; }
   }
 
-  /* スケジュール */
   &__schedule {
     margin-bottom: 8rem;
     @include pc { margin-bottom: 11rem; }
@@ -200,6 +247,7 @@
     max-width: 74.4rem;
     margin: 0 auto;
     position: relative;
+
     &::before {
       content: "";
       position: absolute;
@@ -210,13 +258,15 @@
       background: var(--red);
       @include pc { left: 1.4rem; }
     }
+
     &Row {
       display: flex;
-      gap: 0.8rem; // ★タイトに
+      gap: 0.8rem;
       margin-bottom: 4rem;
       &:last-child { margin-bottom: 0; }
       @include pc { gap: 2.5rem; }
     }
+
     &Dot {
       width: 1.4rem;
       height: 1.4rem;
@@ -226,8 +276,9 @@
       flex-shrink: 0;
       @include pc { width: 2.8rem; height: 2.8rem; }
     }
+
     &Time {
-      width: 7.5rem; // ★幅を確保
+      width: 7.5rem;
       font-size: 1.4rem; 
       font-weight: 700;
       color: var(--red);
@@ -240,6 +291,7 @@
         padding-top: 0.2rem;
       }
     }
+
     &Content {
       flex: 1;
       min-width: 0;
@@ -251,6 +303,7 @@
         @include pc { font-size: 2rem; }
       }
     }
+
     &Image {
       border-radius: 0.8rem;
       overflow: hidden;
@@ -258,18 +311,19 @@
     }
   }
 
-  /* 応募方法 */
   &__entry {
     margin-bottom: 8rem;
     text-align: center;
     @include pc { margin-bottom: 11rem; }
+
     &Lead {
       font-size: 1.6rem;
-      font-weight: 700;
+      font-weight: 500;
       margin-bottom: 2.4rem;
       line-height: 1.6;
       @include pc { font-size: 1.8rem; margin-bottom: 3.2rem; }
     }
+
     &List {
       display: flex;
       flex-direction: column;
@@ -279,12 +333,14 @@
       border-radius: 2rem;
       margin-bottom: 2.4rem;
       list-style: none;
+
       @include pc {
         flex-direction: row;
         justify-content: center;
         gap: 4rem;
         padding: 4rem;
       }
+
       li {
         font-size: 1.6rem;
         font-weight: 700;
@@ -292,36 +348,33 @@
         padding-left: 3.2rem;
         text-align: left;
         @include pc { font-size: 1.8rem; }
+
         &::before {
-          content: '✔';
+          content: '';
           position: absolute;
           left: 0;
-          top: 0.2rem;
-          background: #eb411f;
-          color: #fff;
+          top: 0.4rem;
           width: 2rem;
           height: 2rem;
-          font-size: 1.2rem;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          border-radius: 0.2rem;
+          background: url('../../assets/img/recruit/icon_check_red.svg') no-repeat center center;
+          background-size: contain;
         }
       }
     }
+
     &Text {
       font-size: 1.4rem;
-      font-weight: 700;
+      font-weight: 500;
       line-height: 1.6;
       text-align: left;
       @include pc { text-align: center; font-size: 1.6rem; }
     }
   }
 
-  /* 問い合わせ */
   &__contact {
     margin-bottom: 11rem;
     text-align: center;
+
     &Info {
       text-align: left;
       display: inline-block;
@@ -331,6 +384,7 @@
       margin-bottom: 3rem;
       @include pc { font-size: 1.8rem; }
     }
+
     &Btn {
       display: flex;
       align-items: center;
@@ -348,29 +402,19 @@
       font-size: 1.8rem;
       box-shadow: 0 4px 15px rgba(235, 65, 31, 0.3);
       transition: opacity 0.3s;
+
       @include pc {
         padding: 2.4rem 4rem;
         font-size: 2.2rem;
         gap: 1.5rem;
       }
-      &::before {
-        content: '>';
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 2.8rem;
-        height: 2.8rem;
-        border: 2px solid #fff;
-        border-radius: 50%;
-        font-size: 1.4rem;
-        font-family: var(--fontEn);
-        font-weight: 400;
-      }
+
       &:hover { opacity: 0.8; }
     }
+
     &Note {
       font-size: 1.6rem;
-      font-weight: 700;
+      font-weight: 500;
       @include pc { font-size: 1.8rem; }
     }
   }

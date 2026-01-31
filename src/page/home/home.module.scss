@@ -1,6 +1,7 @@
 @use '@/styles/mixin' as *;
 
 .home {
+  // --- MV Section ---
   &__mv {
     padding: 0 1rem;
     margin-bottom: 5.6rem;
@@ -10,6 +11,8 @@
       margin: 0 auto 11rem;
     }
   }
+
+  // --- Introduction Content ---
   &__content {
     padding: 0 1.5rem;
     margin-bottom: 5.6rem;
@@ -24,6 +27,7 @@
       padding: 0;
     }
   }
+
   &__contentText {
     padding: 0 1.1rem;
     margin-bottom: 4rem;
@@ -49,12 +53,14 @@
       font-weight: 700;
     }
   }
+
   &__contentImage {
     @include pc {
       width: calc(696 / 1250 * 100%);
     }
   }
-  // --------------------------------------------------
+
+  // --- Treatment Section ---
   &__treatment {
     background-color: var(--gray);
     border-radius: 2rem;
@@ -65,6 +71,7 @@
       padding: 9rem 0 8rem;
     }
   }
+
   &__treatmentInner {
     padding: 0 2rem;
     @include pc {
@@ -74,6 +81,7 @@
       margin: 0 auto;
     }
   }
+
   &__treatmentTitle {
     @include mainTitle;
     text-align: center;
@@ -82,6 +90,7 @@
       margin-bottom: 5rem;
     }
   }
+
   &__treatmentList {
     display: flex;
     gap: 1.5rem;
@@ -100,7 +109,6 @@
     }
     button {
       position: relative;
-      display: block;
       width: 100%;
       height: 100%;
       display: flex;
@@ -160,13 +168,15 @@
       }
     }
   }
-  // --------------------------------------------------
+
+  // --- Access Section ---
   &__access {
     padding: 5.6rem 0;
     @include pc {
       padding: 11rem 0;
     }
   }
+
   &__accessInner {
     @include pc {
       display: flex;
@@ -177,6 +187,7 @@
       gap: 6.5rem;
     }
   }
+
   &__accessContent {
     padding: 0 2rem;
     margin-bottom: 6rem;
@@ -185,6 +196,7 @@
       margin-bottom: 0;
     }
   }
+
   &__accessTitle {
     @include mainTitle;
     text-align: center;
@@ -194,6 +206,7 @@
       margin-bottom: 4rem;
     }
   }
+
   &__accessAddress {
     font-size: 1.6rem;
     line-height: 1.6;
@@ -203,6 +216,7 @@
       margin-bottom: 4rem;
     }
   }
+
   &__accessMap {
     position: relative;
     width: 100%;
@@ -218,7 +232,8 @@
       height: 100%;
     }
   }
-  // --------------------------------------------------
+
+  // --- Clinic Hours Section ---
   &__clinicHours {
     background-color: var(--gray);
     border-radius: 2rem;
@@ -229,6 +244,7 @@
       padding: 8rem 0;
     }
   }
+
   &__clinicHoursInner {
     padding: 0 2rem;
     @include pc {
@@ -241,84 +257,73 @@
       gap: 5rem;
     }
   }
+
   &__clinicHoursTable {
     width: 100%;
-    tr {
-      text-align: left;
-    }
-    th {
-      border-bottom: 0.1rem solid var(--white);
-    }
+    tr { text-align: left; }
+    th { border-bottom: 0.1rem solid var(--white); }
     td {
       padding: 1rem 0;
       border-bottom: 0.1rem solid var(--white);
-      line-height: 0.6;
-      @include pc {
-        padding: 2.1rem 0;
-      }
+      line-height: 1.2;
+      @include pc { padding: 2.1rem 0; }
     }
   }
+
   &__clinicHoursHead {
     font-size: 1.3rem;
-    @include pc {
-      font-size: 1.8rem;
-    }
+    @include pc { font-size: 1.8rem; }
     th {
       padding: 1rem 0;
-      @include pc {
-        padding: 2.1rem 0;
-      }
+      @include pc { padding: 2.1rem 0; }
     }
-    th:first-of-type {
-      font-weight: 400;
-    }
-    th:last-of-type {
-      color: var(--red);
-    }
+    th:first-of-type { font-weight: 400; }
+    th:last-of-type { color: var(--red); }
   }
+
   &__clinicHoursHeadRow {
     text-align: center;
     font-weight: 600;
   }
+
   &__clinicHoursBody {
     font-size: 1.5rem;
-    @include pc {
-      font-size: 1.8rem;
-    }
+    @include pc { font-size: 1.8rem; }
   }
+
   &__clinicHoursBodyTimeSlot {
     font-family: var(--fontEn);
     font-weight: 700;
   }
+
   &__clinicHoursBodySmall {
     font-size: 1rem;
-    @include pc {
-      font-size: 1.3rem;
-    }
+    @include pc { font-size: 1.3rem; }
   }
+
   &__clinicHoursRow {
     text-align: center;
     &_red {
       font-size: 1.8rem;
       color: var(--red);
-      @include pc {
-        font-size: 2.2rem;
-      }
+      @include pc { font-size: 2.2rem; }
     }
   }
+
   &__clinicHoursContent {
     width: 100%;
     margin-bottom: 3rem;
     @include pc {
-      width: auto;
       width: calc(728 / 1230 * 100%);
       margin-bottom: 0;
     }
   }
+
   &__clinicHoursText {
     font-size: 1.4rem;
     margin-top: 1.6rem;
   }
+
   &__clinicHoursContact {
     background-color: var(--white);
     padding: 2rem 0;
@@ -329,6 +334,7 @@
       padding: 4rem 2rem;
     }
   }
+
   &__clinicHoursContactTitle {
     font-size: 1.5rem;
     font-weight: 500;
@@ -338,34 +344,29 @@
       margin-bottom: 2rem;
     }
   }
+
   &__clinicHoursContactTel {
     font-size: 2rem;
     font-weight: 500;
     margin-bottom: 1.2rem;
     font-family: var(--fontEn);
-    @include pc {
-      font-size: 2rem;
-    }
     span {
       font-size: 2.4rem;
-      @include pc {
-        font-size: 3.6rem;
-      }
+      @include pc { font-size: 3.6rem; }
     }
   }
+
   &__clinicHoursContactTime {
     font-size: 1.3rem;
-    @include pc {
-      font-size: 1.5rem;
-    }
+    @include pc { font-size: 1.5rem; }
   }
-  // --------------------------------------------------
+
+  // --- Recruit Section ---
   &__recruit {
     padding-top: 5.6rem;
-    @include pc {
-      padding-top: 11rem;
-    }
+    @include pc { padding-top: 11rem; }
   }
+
   &__recruitInner {
     position: relative;
     padding: 0 1.5rem;
@@ -376,159 +377,121 @@
       margin: 0 auto;
     }
   }
+
   &__recruitImage {
     margin-bottom: 6rem;
   }
+
   &__recruitTitle {
     font-size: 2rem;
     margin-bottom: 2rem;
     font-weight: 700;
+    text-align: center;
     @include pc {
-      font-size: 2.8rem;
+      font-size: 2.4rem;
       margin-bottom: 2.6rem;
     }
   }
-  &__recruitList {
-    margin-bottom: 5.6rem;
+
+  &__recruitLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-bottom: 6rem;
     @include pc {
-      display: flex;
+      flex-direction: row;
+      justify-content: center;
       gap: 2rem;
+      margin-bottom: 10rem;
     }
   }
-  &__recruitItem {
-    background: var(--gray);
-    padding: 3rem 2rem;
-    border-radius: 2rem;
-    @include pc {
-      padding: 3rem;
-      flex: 1;
+
+  &__recruitLinkBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f2f1e9;
+    color: var(--red);
+    font-weight: 700;
+    font-size: 1.8rem;
+    padding: 3rem 2.2rem;
+    border-radius: 1.6rem;
+    text-decoration: none;
+    position: relative;
+    transition: background 0.3s, opacity 0.3s;
+    flex: 1;
+    @include pc { font-size: 2rem; }
+
+    &::after {
+      content: '';
+      width: 1.2rem;
+      height: 1.2rem;
+      border-top: 0.2rem solid var(--red);
+      border-right: 0.2rem solid var(--red);
+      transform: rotate(45deg);
+      position: absolute;
+      right: 3.5rem;
     }
-    & + & {
-      margin-top: 2rem;
-      @include pc {
-        margin-top: 0;
+
+    &:hover {
+      background: #e8e7df;
+      opacity: 0.9;
+      &::after {
+        transform: rotate(45deg) translate(5px, -5px);
+        transition: 0.2s;
       }
     }
   }
-  &__recruitItemContent {
+
+  // --- Modal Section ---
+  &__modalImage {
     display: flex;
     align-items: center;
-    margin-bottom: 2rem;
-  }
-  &__recruitItemNumber {
-    font-size: 2.8rem;
-    font-weight: 500;
-    font-family: var(--fontEn);
-    color: var(--red);
-    margin-right: 1.6rem;
-    padding-right: 1.6rem;
-    border-right: 0.1rem solid #cccccc;
+    gap: 1.2rem;
+    margin-bottom: 2.4rem;
     @include pc {
-      font-size: 3.2rem;
-      margin-right: 2rem;
-      padding-right: 2rem;
+      gap: 2rem;
+      margin-bottom: 4rem;
     }
   }
-  &__recruitItemTitle {
-    font-size: 2.2rem;
-    font-weight: 700;
-    letter-spacing: 0.04rem;
-    line-height: 1.4;
-    word-break: keep-all;
+
+  &__modalImageIcon {
+    width: 6rem;
+    height: 6rem;
+    @include pc {
+      width: 8rem;
+      height: 8rem;
+    }
   }
-  &__recruitItemText {
-    font-size: 1.6rem;
-    line-height: 1.6;
-    letter-spacing: 0.04rem;
-  }
-  &__recruitContentText {
-    font-size: 1.6rem;
-    line-height: 1.4;
-    letter-spacing: 0.04rem;
-    margin-bottom: 5.6rem;
-  }
-  &__recruitContentSecondText {
-    font-size: 1.8rem;
+
+  &__modalTitle {
+    font-size: 2.4rem;
     font-weight: 700;
     letter-spacing: 0.02rem;
-    margin-bottom: 2.4rem;
+    @include pc { font-size: 3.2rem; }
   }
-  &__recruitContentTel {
-    font-size: 3.6rem;
-    font-weight: 500;
-  }
-  &__recruitContentTelTitle {
-    font-size: 2rem;
-  }
-  &__recruitContentTelTime {
-    display: block;
-    margin-top: 1.4rem;
-    font-size: 1.5rem;
-    font-weight: 400;
-    @include pc {
-      display: inline;
-      padding-left: 1.4rem;
+
+  &__modalContent {
+    font-size: 1.6rem;
+    letter-spacing: 0.02rem;
+    line-height: 1.8;
+    white-space: pre-wrap;
+    
+    :global(h3) {
+      margin-top: 1.6rem;
+      margin-bottom: 0.8rem;
+      font-size: 1.8rem;
+      font-weight: 600;
+    }
+    
+    :global(.home__modalList) {
+      margin-top: 0;
+      li {
+        margin-bottom: 0.8rem;
+        line-height: 1.6;
+        &:last-child { margin-bottom: 0; }
+        strong { font-weight: 600; }
+      }
     }
   }
 }
-
-  // --------------------------------------------------
-
-  .home {
-    &__modalImage {
-      display: flex;
-      align-items: center;
-      gap: 1.2rem;
-      margin-bottom: 2.4rem;
-      @include pc {
-        gap: 2rem;
-        margin-bottom: 4rem;
-      }
-    }
-    &__modalImageIcon {
-      width: 6rem;
-      height: 6rem;
-      @include pc {
-        width: 8rem;
-        height: 8rem;
-      }
-    }
-    &__modalTitle {
-      font-size: 2.4rem;
-      font-weight: 700;
-      letter-spacing: 0.02rem;
-      @include pc {
-        font-size: 3.2rem;
-      }
-    }
-    &__modalContent {
-      font-size: 1.6rem;
-      letter-spacing: 0.02rem;
-      line-height: 1.8;
-      white-space: pre-wrap;
-      
-      :global(h3) {
-        margin-top: 1.6rem;
-        margin-bottom: 0.8rem;
-        font-size: 1.8rem;
-        font-weight: 600;
-      }
-      
-      :global(.home__modalList) {
-        margin-top: 0;
-        
-        li {
-          margin-bottom: 0.8rem;
-          line-height: 1.6;
-          
-          &:last-child {
-            margin-bottom: 0;
-          }
-          
-          strong {
-            font-weight: 600;
-          }
-        }
-      }
-    }
-  }
