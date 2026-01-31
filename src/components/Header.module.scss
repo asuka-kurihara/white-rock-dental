@@ -2,96 +2,180 @@
 
 .header {
   padding: 1.2rem 0;
+  background: var(--white);
+  position: relative;
+  z-index: 100;
+  box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.05);
+
   @include pc {
     max-width: 144rem;
     margin: 0 auto;
     padding: 2rem 4rem;
   }
+
   &__inner {
     padding: 0 1.2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    @include pc {
-      padding: 0;
-    }
+    @include pc { padding: 0; }
   }
+
   &__logo {
     width: 23.3rem;
+    @include pc { width: 33.5rem; }
+  }
+
+  // --- PC版ナビゲーション ---
+  &__nav {
+    display: none;
     @include pc {
-      width: 33.5rem;
+      display: flex;
+      align-items: center;
+      gap: 4rem;
     }
   }
+
+  &__menu {
+    display: flex;
+    list-style: none;
+    gap: 3.6rem;
+    margin: 0;
+    padding: 0;
+
+    &Item {
+      position: relative;
+    }
+
+    &Link {
+      font-size: 2.4rem; // 24px相当
+      font-weight: 700;
+      color: #000;
+      display: flex;
+      align-items: center;
+      padding: 1rem 0;
+      transition: color 0.3s ease;
+      cursor: pointer;
+
+      &::before {
+        content: "";
+        width: 0.7rem;
+        height: 0.7rem;
+        background-color: var(--red);
+        border-radius: 50%;
+        margin-right: 1.2rem;
+        display: inline-block;
+        flex-shrink: 0;
+      }
+
+      &:hover {
+        color: var(--red); // ホバーでテキストを赤に
+      }
+    }
+  }
+
+  // --- ドロップダウン ---
+  &__recruit {
+    &:hover {
+      .header__dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(0);
+      }
+    }
+  }
+
+  &__dropdown {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(1rem);
+    width: 26rem;
+    background: var(--white);
+    border-radius: 1.6rem;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.15);
+    padding: 1rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 10;
+
+    &Item {
+      display: block;
+      padding: 1.5rem 2rem;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #333;
+      border-radius: 1rem;
+      transition: background 0.2s, color 0.2s;
+
+      &:hover {
+        background: #f8f8f8;
+        color: var(--red);
+      }
+      &:not(:last-child) { border-bottom: 0.1rem solid #eee; }
+    }
+  }
+
+  // --- コンタクトエリア ---
+  &__contact {
+    display: flex;
+    align-items: center;
+    gap: 3.6rem;
+  }
+
+  &__linkTelPc {
+    font-size: 3.2rem;
+    font-family: var(--fontEn);
+    font-weight: 700;
+    color: var(--red);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+  }
+
+  &__telPc {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
+  &__linkInstaPc {
+    width: 5.2rem;  // 52px指定
+    height: 5.2rem; // 52px指定
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s;
+
+    &:hover { opacity: 0.7; }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  // --- SP版パーツ（既存） ---
   &__linkList {
     display: flex;
     gap: 0.6rem;
-    @include pc {
-      display: none;
-    }
-    &Pc {
-      display: none;
-      align-items: center;
-      gap: 3.6rem;
-      @include pc {
-        display: flex;
-      }
-    }
+    @include pc { display: none; }
   }
-  &__linkItem {
-    > a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 4.6rem;
-      height: 4.6rem;
-      border-radius: 1rem;
-    }
+  &__linkItem > a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4.6rem;
+    height: 4.6rem;
+    border-radius: 1rem;
   }
-  &__linkTel {
-    background: var(--red);
-    &Pc {
-      font-size: 3.2rem;
-      font-family: var(--fontEn);
-      font-weight: 500;
-      span {
-        display: block;
-        font-size: 1.4rem;
-        font-weight: 400;
-        margin: 0.4rem 0 0 2.6rem;
-      }
-    }
-  }
-  &__linkInsta {
-    background: var(--green);
-    &Pc {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 19rem;
-      height: 6.8rem;
-      background: var(--green);
-      color: var(--white);
-      border-radius: 10rem;
-      font-size: 2rem;
-    }
-  }
-  &__tel {
-    width: 2rem;
-    height: 2.6rem;
-    color: var(--white);
-    &Pc {
-      color: var(--red);
-      width: 2.4rem;
-      height: 2.4rem;
-    }
-  }
+  &__linkTel { background: var(--red); }
+  &__linkInsta { background: var(--green); }
   &__insta {
     width: 2.4rem;
     height: 2.4rem;
-    &Pc {
-      width: 2.4rem;
-      height: 2.4rem;
-      margin-right: 0.9rem;
-    }
+    object-fit: contain;
   }
 }
