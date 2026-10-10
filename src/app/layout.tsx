@@ -1,10 +1,16 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Provider } from 'jotai';
 import { ModalHandler } from '@/components/Modal';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { notoSansJP, overpass } from '@/utils/font';
 import '@/styles/globals.scss';
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+};
 
 export const metadata: Metadata = {
   // 1. 基本的なメタ情報（最重要）
@@ -13,19 +19,12 @@ export const metadata: Metadata = {
   description:
     '神奈川県厚木市で外来・訪問歯科を行っています。地域の皆様のお口の健康をサポートします。',
 
-  // 2. ビューポート設定（レスポンシブ対応）
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 5,
-  },
-
-  // 3. 正規URL
+  // 2. 正規URL
   alternates: {
     canonical: '/',
   },
 
-  // 4. 検索エンジン制御
+  // 3. 検索エンジン制御
   robots: {
     index: true,
     follow: true,
@@ -38,7 +37,7 @@ export const metadata: Metadata = {
     },
   },
 
-  // 5. キーワードと作者情報
+  // 4. キーワードと作者情報
   keywords: [
     '訪問歯科',
     '歯科診療',
@@ -51,14 +50,14 @@ export const metadata: Metadata = {
   creator: 'ホワイトロック歯科',
   publisher: 'ホワイトロック歯科',
 
-  // 6. フォーマット検出制御
+  // 5. フォーマット検出制御
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
 
-  // 7. Open Graph（Facebook、LINE等）
+  // 6. Open Graph（Facebook、LINE等）
   openGraph: {
     title: 'ホワイトロック歯科 | 外来・訪問歯科',
     description:
@@ -77,7 +76,7 @@ export const metadata: Metadata = {
     type: 'website',
   },
 
-  // 8. Twitter Card
+  // 7. Twitter Card
   twitter: {
     card: 'summary_large_image',
     title: 'ホワイトロック歯科 | 外来・訪問歯科',

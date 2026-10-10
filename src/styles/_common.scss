@@ -5,6 +5,7 @@ html {
   font-size: 2.666666666666667vw;
   // background: var(--mainBg);
   color: var(--black);
+  scroll-behavior: smooth;
   @include pc {
     font-size: 62.5%;
   }
@@ -15,6 +16,9 @@ html {
 body {
   font-family: var(--fontJp);
   line-height: 1;
+}
+h1 {
+  line-height: 1.4;
 }
 img {
   width: 100%;

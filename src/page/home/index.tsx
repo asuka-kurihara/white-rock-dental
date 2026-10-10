@@ -52,6 +52,9 @@ const treatmentLists = [
   },
 ];
 
+import { NewsList } from '@/components/NewsList/NewsList';
+import { newsData } from '@/utils/newsData';
+
 const HomeIndex = () => {
   const { open } = useModal();
 
@@ -86,14 +89,31 @@ const HomeIndex = () => {
       <div className={styles.home__mv}>
         <TopCarousel />
       </div>
+
+      <section className={styles.home__news}>
+        <div className={styles.home__newsInner}>
+          <h2 className={styles.home__newsTitle}>
+            <span>NEWS</span>お知らせ
+          </h2>
+          <div className={styles.home__newsContent}>
+            <NewsList items={newsData.slice(0, 5)} isLinkToSelf={true} />
+            <div className={styles.home__newsBtnWrap}>
+              <Link href="/news" className={styles.home__newsBtn}>
+                お知らせ一覧へ
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <div className={styles.home__content}>
         <div className={styles.home__contentText}>
           <p>
-            「もっとこうなったらいいのに…」「いつかやってみたいけど…」 歯や口について、ひとりで悩んだり、ひとりではためらったり、一度はあきらめたりした、あなたの“希望”を聞かせてください。 
+            「もっとこうなったらいいのに…」「いつかやってみたいけど…」 歯や口について、ひとりで悩んだり、ひとりではためらったり、一度はあきらめたりした、あなたの“希望”を聞かせてください。
           </p>
           <p>歯が一本しかなくても、だいじょうぶ。まだー本のこっています！ うまくのみこめない？だいじょうぶ、リハビリをしてみませんか 。私たちは、計画的で丁寧な診療を通じて、あなたがまだもっている 「なれること」「やれること」を、あなたとともに見つけ出します。 可能性を活かし、“希望”に向かうあなたを、そっと、そして全力で、ささえ続けます。 </p>
           <p>
-            ”悠々すこやか”なこころとからだを、 自分らしく生き生きと暮らせる人生を、 一生を笑顔で楽しめるコミュニティを、 ここホワイトロックで、一緒につくりませんか？ 
+            “悠々すこやか”なこころとからだを、 自分らしく生き生きと暮らせる人生を、 一生を笑顔で楽しめるコミュニティを、 ここホワイトロックで、一緒につくりませんか？
           </p>
         </div>
         <div className={styles.home__contentImage}>
@@ -190,7 +210,16 @@ const HomeIndex = () => {
               alt="Recruit"
             />
           </div>
-         <section>
+          <div className={styles.home__recruitMessage}>
+            <p>
+              子育てや介護もあるけれど、まだまだスキルアップをつづけたい。<br />
+              そろそろ新しいこ何かにチャレンジしたい。<br />もっともっと患者さんと丁寧に関わりたい、、、
+            </p>
+            <p>
+              “もっとやりたい”“もっとなりたい”あなたのおもいを、私たちにきかせてください。<br />ご自身の“希望”を叶えながら、患者さんの心と体をともに支えてくださる、<br />“ROCK” なあなたを歓迎します！
+            </p>
+          </div>
+          <section>
             <h2 className={styles.home__recruitTitle}>募集職</h2>
             <div className={styles.home__recruitLinks}>
               <Link href="/recruit/hygienist" className={styles.home__recruitLinkBtn}>

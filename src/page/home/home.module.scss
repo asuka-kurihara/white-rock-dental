@@ -8,7 +8,80 @@
     @include pc {
       padding: 0 4rem;
       max-width: 144rem;
+      margin: 0 auto 8rem;
+    }
+  }
+
+  // --- News Section ---
+  &__news {
+    padding: 0 1.5rem;
+    margin-bottom: 7rem;
+    @include pc {
+      padding: 0;
+      width: 90%;
+      max-width: 125rem;
       margin: 0 auto 11rem;
+    }
+  }
+
+  &__newsInner {
+    width: 100%;
+    @include pc {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 8rem;
+    }
+  }
+
+  &__newsTitle {
+    @include mainTitle;
+    text-align: center;
+    margin-bottom: 2.4rem;
+    @include pc {
+      text-align: left;
+      margin-bottom: 0;
+      flex-shrink: 0;
+      width: 20rem; // Restricts title width to left side
+    }
+  }
+
+  &__newsContent {
+    flex-grow: 1;
+    width: 100%;
+  }
+
+  &__newsBtnWrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 3.2rem;
+    @include pc { 
+      margin-top: 4.8rem; 
+      justify-content: flex-end;
+    }
+  }
+
+  &__newsBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24rem;
+    padding: 1.6rem 3.2rem;
+    background-color: var(--white);
+    border: 0.1rem solid var(--red);
+    color: var(--red);
+    font-size: 1.5rem;
+    font-weight: 700;
+    border-radius: 4rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    @include pc {
+      font-size: 1.6rem;
+      min-width: 28rem;
+      &:hover {
+        background-color: var(--red);
+        color: var(--white);
+      }
     }
   }
 
@@ -379,7 +452,31 @@
   }
 
   &__recruitImage {
+    margin-bottom: 4rem;
+  }
+
+  &__recruitMessage {
     margin-bottom: 6rem;
+    padding: 0 1rem;
+    @include pc {
+      padding: 0;
+      text-align: center;
+    }
+    p {
+      font-size: 1.5rem;
+      line-height: 2;
+      letter-spacing: .06rem;
+      margin-bottom: 2.4rem;
+      text-align: left;
+      @include pc {
+        text-align: center;
+        font-size: 1.6rem;
+        line-height: 2.4;
+      }
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
   }
 
   &__recruitTitle {

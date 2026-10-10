@@ -1,0 +1,56 @@
+@use '@/styles/mixin' as *;
+
+.message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6rem;
+
+  @include pc {
+    gap: 6.4rem;
+  }
+
+  p.message__text {
+    margin: 0;
+    white-space: pre-line;
+    text-align: center;
+    font-size: 1.6rem;
+    line-height: 1.9;
+
+    @include pc {
+      font-size: 1.8rem;
+      line-height: 1.6;
+    }
+  }
+
+  &__profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  p.message__name {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.6;
+
+    @include pc {
+      font-size: 2rem;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    max-width: 67.8rem;
+    border-radius: 0.8rem;
+    overflow: hidden;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+}
