@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import styles from './AnchorNav.module.scss';
 import React from 'react';
 
@@ -17,9 +16,10 @@ export const AnchorNav: React.FC<AnchorNavProps> = ({ items }) => {
   return (
     <div className={styles.anchorNav}>
       {items.map((item) => (
-        <Link key={item.id} href={`#${item.id}`} className={styles.anchorBtn}>
+        // next/link だと同じハッシュを再クリックした際にスクロールしないため <a> を使用
+        <a key={item.id} href={`#${item.id}`} className={styles.anchorBtn}>
           {item.title}
-        </Link>
+        </a>
       ))}
     </div>
   );

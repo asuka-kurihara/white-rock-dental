@@ -28,7 +28,8 @@ export default function Page() {
         <AnchorNav items={[
           { id: 'section-clinic-1', title: '当院の特徴' },
           { id: 'section-clinic-2', title: '医院概要' },
-          { id: 'section-clinic-3', title: '当院の感染症対策' }
+          { id: 'section-clinic-3', title: '当院の感染症対策' },
+          { id: 'section-clinic-4', title: '施設基準について' }
         ]} />
 
         {/* 当院の特徴 */}
@@ -144,6 +145,26 @@ export default function Page() {
               </tr>
             </tbody>
           </table>
+        </section>
+
+        {/* 施設基準について */}
+        <section id="section-clinic-4" className={styles.clinic__section}>
+          <h2 className={styles.clinic__sectionTitle}>
+            施設基準について
+          </h2>
+          <div className={styles.clinic__content}>
+            <p>
+              当医院は、以下の施設基準等に適合している旨、厚生労働省地方厚生（支）局に届出を行っています。
+            </p>
+            <a
+              href="/pdf/facility-standards.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.clinic__pdfLink}
+            >
+              施設基準について(PDF)
+            </a>
+          </div>
         </section>
       </div>
     </div>

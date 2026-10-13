@@ -109,6 +109,32 @@
     }
   }
 
+  &__pdfLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    max-width: 100%;
+    margin: 2.4rem auto 0;
+    padding: 1.4rem 3.2rem;
+    background: var(--green);
+    color: var(--white);
+    border-radius: 10rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.4;
+    text-align: center;
+    transition: opacity 0.2s;
+    @include pc {
+      margin-top: 3.2rem;
+      padding: 1.8rem 4.8rem;
+      font-size: 1.8rem;
+    }
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
   &__tableWrap {
     width: 100%;
     overflow-x: auto;

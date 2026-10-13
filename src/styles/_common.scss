@@ -13,6 +13,13 @@ html {
     display: none;
   }
 }
+// アンカーリンクの着地点（SPは固定ヘッダーの高さ分ずらす）
+section[id] {
+  scroll-margin-top: 9rem;
+  @include pc {
+    scroll-margin-top: 2rem;
+  }
+}
 body {
   font-family: var(--fontJp);
   line-height: 1;
