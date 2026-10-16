@@ -96,10 +96,8 @@ export default function Page() {
                     <ClinicHours />
                   </div>
                   <div className={styles.clinic__tableNote}>
-                    <p><span>休診日：日曜、祝日</span></p>
+                    <p><span>休診日：土・日曜日、祝日</span></p>
                     <p>外来は完全予約制</p>
-                    <p>訪問診療は朝9時半から、17時まで</p>
-                    <p>デイサービス帰宅後など受付時間外希望の方は別途ご相談ください。</p>
                   </div>
                 </td>
               </tr>
